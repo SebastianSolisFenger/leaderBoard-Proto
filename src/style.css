@@ -22,6 +22,10 @@
   padding: 20px;
 }
 
+.left-side {
+  flex-basis: 45%;
+}
+
 .left-side-header {
   display: flex;
   gap: 10px;
@@ -31,12 +35,17 @@
   display: flex;
   gap: 10px;
   flex-direction: column;
+  flex-basis: 40%;
 }
 
 #add-score-form {
   display: flex;
   flex-direction: column;
   gap: 15px;
+}
+
+#add-score-form > * {
+  height: 30px;
 }
 
 #submit {
@@ -47,4 +56,37 @@
 #scores-table {
   border: 2px solid black;
   margin-top: 15px;
+  width: 100%;
+  border-radius: 5px;
+}
+
+tr,
+td {
+  padding: 5px;
+}
+
+tr:nth-child(even) {
+  background-color: rgb(203, 203, 203);
+}
+
+.refresh-btn {
+  height: 30px;
+  align-self: center;
+  width: 80px;
+}
+
+.btn {
+  cursor: pointer;
+  border: none;
+  padding: 3px 10px;
+  border-radius: 4px;
+}
+
+.p-footer {
+  text-align: center;
+  padding: 12px 0;
+  background-color: rgb(203, 203, 203);
+  position: absolute;
+  bottom: 0;
+  width: 100%;
 }

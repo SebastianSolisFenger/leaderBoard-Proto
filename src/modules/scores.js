@@ -19,6 +19,14 @@ const scores = [
     name: 'Genoveba',
     score: 100,
   },
+  {
+    name: 'Tom',
+    score: 10,
+  },
+  {
+    name: 'Paul',
+    score: 5,
+  },
 ];
 
 export default scores;
