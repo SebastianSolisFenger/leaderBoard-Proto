@@ -116,7 +116,17 @@ eval("\n\n/* istanbul ignore next  */\nfunction styleTagTransform(css, styleElem
   \**********************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _style_css__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./style.css */ \"./src/style.css\");\n/* harmony import */ var _modules_scores_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./modules/scores.js */ \"./src/modules/scores.js\");\n\r\n\r\n\r\nconst dashboard = document.getElementById('scores-table');\r\n\r\nconst loadScores = () => {\r\n  dashboard.innerHTML = _modules_scores_js__WEBPACK_IMPORTED_MODULE_1__[\"default\"].map((score) => `<tr><td>${score.name}: ${score.score}</td></tr>`)\r\n    .join('');\r\n};\r\n\r\nwindow.onload = () => {\r\n  loadScores();\r\n};\r\n\n\n//# sourceURL=webpack://webpack-config/./src/index.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _modules_scores_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./modules/scores.js */ \"./src/modules/scores.js\");\n/* harmony import */ var _modules_UI_changes_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./modules/UI-changes.js */ \"./src/modules/UI-changes.js\");\n/* harmony import */ var _style_css__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./style.css */ \"./src/style.css\");\n\n\n\n\nconst urlAPI =\n  \"https://us-central1-js-capstone-backend.cloudfunctions.net/api/games/vHgjZguZh1mV5jrt1yYv/scores\";\nconst refreshBtn = document.querySelector(\".refresh-btn\");\nconst addScoreForm = document.getElementById(\"add-score-form\");\n\nwindow.addEventListener(\"load\", () => (0,_modules_UI_changes_js__WEBPACK_IMPORTED_MODULE_1__.loadMapScores)(urlAPI));\nrefreshBtn.addEventListener(\"click\", () => (0,_modules_UI_changes_js__WEBPACK_IMPORTED_MODULE_1__.loadMapScores)(urlAPI));\n\naddScoreForm.addEventListener(\"submit\", async (event) => {\n  event.preventDefault();\n  await (0,_modules_scores_js__WEBPACK_IMPORTED_MODULE_0__.addScore)(urlAPI, (0,_modules_UI_changes_js__WEBPACK_IMPORTED_MODULE_1__.functionScoreFromUser)());\n  (0,_modules_UI_changes_js__WEBPACK_IMPORTED_MODULE_1__.loadMapScores)(urlAPI);\n  addScoreForm.reset();\n});\n\n\n//# sourceURL=webpack://webpack-config/./src/index.js?");
+
+/***/ }),
+
+/***/ "./src/modules/UI-changes.js":
+/*!***********************************!*\
+  !*** ./src/modules/UI-changes.js ***!
+  \***********************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"functionScoreFromUser\": () => (/* binding */ functionScoreFromUser),\n/* harmony export */   \"loadMapScores\": () => (/* binding */ loadMapScores)\n/* harmony export */ });\n/* harmony import */ var _scores_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./scores.js */ \"./src/modules/scores.js\");\n\n\nconst userInput = document.getElementById(\"user\");\nconst scoreInput = document.getElementById(\"score\");\nconst dashboard = document.getElementById(\"scores-table\");\n\nconst functionScoreFromUser = () => {\n  const scoreObjData = {\n    method: \"POST\",\n    headers: { \"Content-Type\": \"application/json\" },\n    body: JSON.stringify({\n      user: userInput.value.trim(),\n      score: scoreInput.value.trim(),\n    }),\n  };\n  return scoreObjData;\n};\n\nconst loadMapScores = async (urlAPI) => {\n  const { result } = await (0,_scores_js__WEBPACK_IMPORTED_MODULE_0__.getAll)(urlAPI);\n  dashboard.innerHTML = result\n    .sort((a, b) => b.score - a.score)\n    .map((score) => `<tr><td>${score.user}: ${score.score}</td></tr>`)\n    .join(\"\");\n};\n\n\n\n\n//# sourceURL=webpack://webpack-config/./src/modules/UI-changes.js?");
 
 /***/ }),
 
@@ -126,7 +136,7 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _sty
   \*******************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\nconst scores = [\n  {\n    name: \"Sebastian\",\n    score: 200,\n  },\n  {\n    name: \"John\",\n    score: 50,\n  },\n  {\n    name: \"Nan\",\n    score: 150,\n  },\n  {\n    name: \"Joshep\",\n    score: 250,\n  },\n  {\n    name: \"Genoveba\",\n    score: 100,\n  },\n  {\n    name: \"Tom\",\n    score: 10,\n  },\n  {\n    name: \"Paul\",\n    score: 5,\n  },\n];\n\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (scores);\n\n\n//# sourceURL=webpack://webpack-config/./src/modules/scores.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"addScore\": () => (/* binding */ addScore),\n/* harmony export */   \"getAll\": () => (/* binding */ getAll)\n/* harmony export */ });\nconst getAll = async (urlAPI) => (await fetch(urlAPI)).json();\n\nconst addScore = async (urlAPI, score) => (await fetch(urlAPI, score)).json();\n\n\n\n\n//# sourceURL=webpack://webpack-config/./src/modules/scores.js?");
 
 /***/ })
 
