@@ -1,4 +1,4 @@
-# Todo list app
+# Leaderboard
 
 > A Javascript to do list web app that keep track of actions or todos.
 
