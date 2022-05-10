@@ -10,9 +10,9 @@
 
 ## LIVE DEMO
 
-https://sebastiansolisfenger.github.io/To-do-List-Pro/dist/
+https://sebastiansolisfenger.github.io/leaderBoard-Proto/dist/
 
-![image](https://user-images.githubusercontent.com/88522494/166743696-1af83251-82cf-4047-8bf8-59cd56ed4317.png)
+![image](https://user-images.githubusercontent.com/88522494/167640623-da84efec-3afe-41d2-94b5-95d6f36fe5dc.png)
 
 ## Author
 
