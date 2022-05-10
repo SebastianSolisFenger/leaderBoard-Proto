@@ -55,11 +55,15 @@
   border: 2px solid black;
   margin-top: 15px;
   width: 100%;
-  border-radius: 5px;
+  border-radius: 10px;
   box-shadow: 4px 7px 7px rgb(103, 103, 103);
   display: flex;
   overflow-y: auto;
   height: 400px;
+}
+
+#scores-table::-webkit-scrollbar {
+  display: none;
 }
 
 #scores-table tbody {
@@ -114,5 +118,5 @@ tr:nth-child(even) {
 #score {
   border-radius: 5px;
   box-shadow: 4px 7px 7px rgb(103, 103, 103);
-  padding: 5px;
+  padding: 8px;
 }

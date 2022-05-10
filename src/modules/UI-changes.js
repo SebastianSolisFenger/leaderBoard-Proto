@@ -20,7 +20,9 @@ const loadMapScores = async (urlAPI) => {
   const { result } = await getAllData(urlAPI);
   dashboard.innerHTML = result
     .sort((a, b) => b.score - a.score)
-    .map((score) => `<tr><td>${score.user}: ${score.score}</td></tr>`)
+    .map(
+      (score) => `<tr><td><strong> ${score.user} </strong>: ${score.score}</td></tr>`,
+    )
     .join('');
 };
 
