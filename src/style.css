@@ -57,6 +57,14 @@
   width: 100%;
   border-radius: 5px;
   box-shadow: 4px 7px 7px rgb(103, 103, 103);
+  display: flex;
+  overflow-y: auto;
+  height: 400px;
+}
+
+#scores-table tbody {
+  display: grid;
+  width: 100%;
 }
 
 tr,
