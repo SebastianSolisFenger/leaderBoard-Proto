@@ -1,18 +1,19 @@
-# Leaderboard
+# Leaderboard website
 
-> A Javascript to do list web app that keep track of actions or todos.
+> The leaderboard website displays scores submitted by different players and allows you to keep a record of it. 
+> All data is preserved thanks to the external [Leaderboard API service](https://www.notion.so/microverse/Leaderboard-API-service-24c0c3c116974ac49488d4eb0267ade3).
 
 ## Built With
 
-- Major languages: HTML & CSS
+- Major languages: Javascript, HTML & CSS.
 - Frameworks: none
-- Technologies used: Webpack
+- Technologies used: Webpack, Leaderboard API service.
 
 ## LIVE DEMO
 
-https://sebastiansolisfenger.github.io/To-do-List-Pro/dist/
+https://sebastiansolisfenger.github.io/leaderBoard-Proto/dist/
 
-![image](https://user-images.githubusercontent.com/88522494/166743696-1af83251-82cf-4047-8bf8-59cd56ed4317.png)
+![image](https://user-images.githubusercontent.com/88522494/167641636-05ecce1e-6125-4bd7-bb55-73a413f97cde.png)
 
 ## Author
 
@@ -20,18 +21,12 @@ https://sebastiansolisfenger.github.io/To-do-List-Pro/dist/
 
 - GitHub: [@sebastianDanielSolisFenger](https://github.com/SebastianSolisFenger)
 
-👤 **Luis pomare**
-
-- GitHub: [@luis-pomare](https://github.com/luis-pomare)
-- Twitter: [@LuisPomare1](https://twitter.com/LuisPomare1)
-- LinkedIn: [luis-pomare-388116225](https://www.linkedin.com/in/luis-pomare-388116225/)
-
 # Install Instruction
 
 1. Open your terminal and `cd` to a proper location.
-2. Clone the Repo on you computer using `git clone git@github.com:SebastianSolisFenger/To-do-List-Pro.git`
+2. Clone the Repo on you computer using `git clone git@github.com:SebastianSolisFenger/leaderBoard-Proto.git`
 3. Make sure you have JavaScript installed; use `js -v` .
-4. Cd to the project directory`cd To-do-List-Pro` .
+4. Cd to the project directory`cd leaderBoard-Proto` .
 5. Use `node -v` to check if you have node instaled
 6. Install the dependencies in the local node_modules folder with `npm install`
 7. Then `npm start`
