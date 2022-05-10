@@ -1,4 +1,4 @@
-import { getAll } from './scores.js';
+import { getAllData } from './scores.js';
 
 const userInput = document.getElementById('user');
 const scoreInput = document.getElementById('score');
@@ -17,7 +17,7 @@ const functionScoreFromUser = () => {
 };
 
 const loadMapScores = async (urlAPI) => {
-  const { result } = await getAll(urlAPI);
+  const { result } = await getAllData(urlAPI);
   dashboard.innerHTML = result
     .sort((a, b) => b.score - a.score)
     .map((score) => `<tr><td>${score.user}: ${score.score}</td></tr>`)

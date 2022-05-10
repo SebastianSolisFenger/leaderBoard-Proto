@@ -5,6 +5,7 @@
   padding: 0;
   margin: 0;
   font-family: "Poppins", sans-serif;
+  transition: 0.2s ease;
 }
 
 .light-house-avoid-error {
@@ -42,10 +43,7 @@
   display: flex;
   flex-direction: column;
   gap: 15px;
-}
-
-#add-score-form > * {
-  height: 30px;
+  margin-top: 5px;
 }
 
 #submit {
@@ -58,6 +56,7 @@
   margin-top: 15px;
   width: 100%;
   border-radius: 5px;
+  box-shadow: 4px 7px 7px rgb(103, 103, 103);
 }
 
 tr,
@@ -70,16 +69,29 @@ tr:nth-child(even) {
 }
 
 .refresh-btn {
-  height: 30px;
   align-self: center;
   width: 80px;
+  margin-top: 5px;
 }
 
 .btn {
+  display: flex;
+  text-align: center;
+  align-items: center;
+  height: 35px;
+  justify-content: center;
+  align-self: center;
   cursor: pointer;
   border: none;
-  padding: 3px 10px;
+  padding: 8px 10px;
+  width: 80px;
   border-radius: 4px;
+  box-shadow: 8px 8px 8px rgb(103, 103, 103);
+  border: 2px solid gray;
+}
+
+.btn:hover {
+  box-shadow: 5px 5px 5px rgb(103, 103, 103);
 }
 
 .p-footer {
@@ -89,4 +101,11 @@ tr:nth-child(even) {
   position: absolute;
   bottom: 0;
   width: 100%;
+}
+
+#user,
+#score {
+  border-radius: 5px;
+  box-shadow: 4px 7px 7px rgb(103, 103, 103);
+  padding: 5px;
 }

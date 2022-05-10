@@ -1,5 +1,5 @@
-const getAll = async (urlAPI) => (await fetch(urlAPI)).json();
+const getAllData = async (urlAPI) => (await fetch(urlAPI)).json();
 
-const addScore = async (urlAPI, score) => (await fetch(urlAPI, score)).json();
+const sendScoreData = async (urlAPI, score) => (await fetch(urlAPI, score)).json();
 
-export { getAll, addScore };
+export { getAllData, sendScoreData };
